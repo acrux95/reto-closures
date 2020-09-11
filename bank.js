@@ -1,37 +1,22 @@
 function makeCounter() {
-    let coin = parseInt(prompt('Presiona 1 si quieres revisar tu saldo en pesos \n Presiona 2 si quieres revisar tu saldo en dolares', ''));
+    let coin = parseInt(prompt('Hola!! Bienvenido a tu banco de confianza.\nPresiona 1 si quieres revisar tu saldo en pesos.\nPresiona 2 si quieres revisar tu saldo en dolares.', ''));
     const cuenta = () => {
-        let pesos = 50000;
-        let dollar = 20000;
-        coin === 1
-            ? alert(`$${pesos}`)
-            : coin === 2
-                ? alert(`$${dollar}`)
-                : alert('No hay datos')
-                }
-            
-        
+        let saldoPesos = 50000;
+        let saldoDollar = 20000;
+        if (coin === 1){
+            let depositoPesos = parseInt(prompt(`Tu saldo actual es: $${saldoPesos}.\n Cuánto quieres depositar? `,''));
+            saldoPesos += depositoPesos;
+            alert(`Tu nuevo saldo es: $${saldoPesos}`);
+        } else { if (coin === 2) {
+            let depositoDollar = parseInt(prompt(`Tu saldo actual es: $${saldoDollar}.\n Cuánto quieres depositar? `,''));
+            saldoDollar += depositoDollar;
+            alert(`Tu nuevo saldo es: $${saldoDollar}`);
+           } else {
+            alert('Selección Invalida, Intenta de nuevo Por favor')
+            }
+        }
+    }
     return cuenta();
 }
-makeCounter();              
 
-//     return {
-//       increase: function() {
-//         count = count + 1;
-//       },
-//       decrease: function() {
-//         count = count - 1;
-//       },
-//       getCount: function() {
-//         return count;
-//       },
-//     };
-//   }
-
-//   let counterPeso = makeCounter(peso);
-//   let counterDollar = makeCounter(dollar);
-
-//   console.log('The count is:', counter.getCount());
-//   counter.increase();
-//   console.log('The count is:', counter.getCount());
-//   counter.decrease();
+makeCounter();          
